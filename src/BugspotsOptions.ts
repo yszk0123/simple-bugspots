@@ -11,6 +11,7 @@ export type BugspotsOptions = {
   interval: number;
   similarity: number;
   regex: RegExp;
+  file: string | null;
 };
 
 export const bugspotsDefaultOptions: BugspotsOptions = {
@@ -20,6 +21,7 @@ export const bugspotsDefaultOptions: BugspotsOptions = {
   regex: /\b(fix(es|ed)?|close(s|d)?)\b/i,
   interval: DEFAULT_PROGRESS_INTERVAL,
   similarity: DEFAULT_SIMILARITY,
+  file: null,
 };
 
 function parseNumberIfExist(s: string | null | undefined): number | undefined {
@@ -31,11 +33,12 @@ export function parseBugspotsOptions(args: string[]): BugspotsOptions {
     args,
     options: {
       concurrency: { type: 'string' },
-      depth: { type: 'string' },
+      depth: { type: 'string', short: 'd' },
       dir: { type: 'string' },
       interval: { type: 'string' },
-      regex: { type: 'string' },
+      regex: { type: 'string', short: 'r' },
       similarity: { type: 'string' },
+      file: { type: 'string', short: 'f' },
     },
   });
 
@@ -64,6 +67,7 @@ export function parseBugspotsOptions(args: string[]): BugspotsOptions {
       interval,
       regex,
       similarity,
+      file: values.file,
     },
     bugspotsDefaultOptions,
   );

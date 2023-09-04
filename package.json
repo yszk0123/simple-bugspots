@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "main": "lib/index.js",
   "bin": {
-    "simple-bugspots": "lib/cli.js"
+    "simple-bugspots": "bin/simple-bugspots.js"
   },
   "repository": "https://github.com/yszk0123/simple-bugspots.git",
   "author": "Yuji Suzuki <y0suzuki0123@gmail.com>",

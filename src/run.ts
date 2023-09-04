@@ -13,5 +13,10 @@ export async function run(): Promise<void> {
       return `${String(roundedScore).padEnd(20, '0')}\t${file}`;
     })
     .join('\n');
-  await fs.writeFile('hotspot.txt', output, 'utf8');
+
+  if (options.file) {
+    await fs.writeFile(options.file, output, 'utf8');
+  } else {
+    console.log(output);
+  }
 }
