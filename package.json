@@ -1,0 +1,50 @@
+{
+  "private": true,
+  "name": "simple-bugspots",
+  "description": "print testcase in tree",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "bin": {
+    "simple-bugspots": "lib/cli.js"
+  },
+  "repository": "https://github.com/yszk0123/simple-bugspots.git",
+  "author": "Yuji Suzuki <y0suzuki0123@gmail.com>",
+  "keywords": [
+    "test"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "tsc -p tsconfig.build.json",
+    "build:production": "run-s clean && NODE_ENV=production tsc -p tsconfig.build.json",
+    "fix:format": "prettier --write .",
+    "fix:lint": "eslint . --fix",
+    "fix": "run-s fix:lint fix:format",
+    "test:lint": "eslint .",
+    "test:jest": "jest",
+    "test:typecheck": "tsc --noEmit",
+    "test": "run-p test:*"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.4",
+    "@types/node": "^20.5.7",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
+    "eslint": "^8.47.0",
+    "jest": "^29.6.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "p-limit": "^3.0.0",
+    "simple-git": "^3.19.1"
+  }
+}
