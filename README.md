@@ -11,3 +11,9 @@ const bugspots = new Bugspots();
 const spots = await bugspots.scan();
 console.log(spots);
 ```
+
+## Debug
+
+```bash
+$ npx tsx src/debug.ts <flags>
+```
