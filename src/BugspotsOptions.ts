@@ -29,8 +29,9 @@ function parseNumberIfExist(s: string | null | undefined): number | undefined {
 }
 
 export function parseBugspotsOptions(args: string[]): BugspotsOptions {
-  const { values } = parseArgs({
+  const { values, positionals } = parseArgs({
     args,
+    allowPositionals: true,
     options: {
       concurrency: { type: 'string' },
       depth: { type: 'string', short: 'd' },
@@ -42,7 +43,7 @@ export function parseBugspotsOptions(args: string[]): BugspotsOptions {
     },
   });
 
-  const baseDir = values.dir ?? '.';
+  const baseDir = values.dir ?? positionals[0] ?? '.';
   const depth = parseNumberIfExist(values.depth);
   const concurrency = parseNumberIfExist(values.concurrency);
   const regexString = values.regex ?? '\\b(fix(es|ed)?|close(s|d)?)\\b';
