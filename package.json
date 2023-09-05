@@ -1,22 +1,24 @@
 {
-  "private": true,
   "name": "simple-bugspots",
-  "description": "print testcase in tree",
+  "description": "A simple bugspots implementation in Node.js",
   "version": "0.1.0",
   "main": "lib/index.js",
   "bin": {
     "simple-bugspots": "bin/simple-bugspots.js"
   },
+  "bugs": {
+    "url": "https://github.com/yszk0123/simple-bugspots/issues"
+  },
   "repository": "https://github.com/yszk0123/simple-bugspots.git",
+  "homepage": "https://github.com/yszk0123/simple-bugspots#readme",
   "author": "Yuji Suzuki <y0suzuki0123@gmail.com>",
-  "keywords": [
-    "test"
-  ],
+  "keywords": [],
   "license": "MIT",
   "engines": {
     "node": ">=16"
   },
   "files": [
+    "bin",
     "lib"
   ],
   "scripts": {
