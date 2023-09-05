@@ -30,6 +30,7 @@ export class Git {
     const diffList: GitDiff[] = res
       .trim()
       .split(/\r?\n/)
+      .filter((line) => line.length > 0)
       .map((line) => {
         // Example:
         // [A|M|R|D] \t file \n
