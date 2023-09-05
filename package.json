@@ -1,7 +1,7 @@
 {
   "name": "simple-bugspots",
   "description": "A simple bugspots implementation in Node.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "lib/index.js",
   "bin": {
     "simple-bugspots": "bin/simple-bugspots.js"
