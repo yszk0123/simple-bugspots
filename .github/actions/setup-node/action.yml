@@ -11,9 +11,6 @@ runs:
       with:
         path: '**/node_modules'
         key: ${{ runner.os }}-npm-node_modules-${{ hashFiles('**/package-lock.json') }}
-    - name: cache
-      shell: bash -euxo pipefail {0}
-      run: echo '${{ toJSON(steps.node_modules_cache_id.outputs) }}'
     - if: ${{ steps.cache.outputs.cache-hit != 'true' }}
       shell: bash -euxo pipefail {0}
       run: npm ci
