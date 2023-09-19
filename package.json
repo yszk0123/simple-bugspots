@@ -46,7 +46,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "p-limit": "^3.0.0",
+    "p-limit": "^4.0.0",
     "simple-git": "^3.19.1"
   }
 }
